@@ -12,6 +12,6 @@ nltk==3.5
 numpy==1.19.4
 PyYAML==5.3.1
 regex==2020.11.13
-scipy==1.6.0
+scipy==1.5.3
 tqdm==4.55.1
 Werkzeug==1.0.1
