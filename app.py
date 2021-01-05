@@ -1,5 +1,5 @@
 from flask import Flask
-# import nltk
+import nltk
 
 app = Flask(__name__)
 
