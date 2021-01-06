@@ -16,6 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    nltk.download()
     text = "hello world"
     text = nltk.word_tokenize(text)
     text = ', '.join(text)
