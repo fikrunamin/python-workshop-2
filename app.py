@@ -361,8 +361,21 @@ def create_response():
 
         return data_intents
 
-    def getSuggestion():
-        print('sada')
+    def getSuggestion(ints):
+        prediction = getPrediction(ints)
+        index_highest_disease_probability = prediction['detected_disease_probabilities'][0]['index']
+        for rule in rules[index_highest_disease_probability]:
+            if (int(rule) not in detected_rules):
+                result = "Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
+                    rule) - 1] + ", do you also feel it? symptoms no: " + rule
+                print(result)
+                user_input = input().lower().strip()
+                if 'yes' in user_input:
+                    ints.append(predict_class(symptoms[int(
+                        rule) - 1], model))
+        result = "I have diagnosed your symptoms and I guess you are having "
+        result += prediction['detected_disease_probabilities'][0]['disease'] + ". Probability : " + str(prediction[0]['probability'])
+        return [result, prediction, True]
 
     def getResponse(ints):
         prediction = getPrediction(ints)
