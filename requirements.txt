@@ -6,6 +6,8 @@ certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
 Flask==1.1.2
+Flask-Cors==3.0.10
+Flask-MySQLdb==0.2.0
 flatbuffers==1.12
 gast==0.3.3
 google-auth==1.24.0
@@ -23,8 +25,10 @@ Keras==2.4.3
 Keras-Preprocessing==1.1.2
 Markdown==3.3.3
 MarkupSafe==1.1.1
+mysql-connector-python==8.0.22
+mysqlclient==2.0.3
 nltk==3.5
-numpy==1.19.4
+numpy==1.19.3
 oauthlib==3.1.0
 opt-einsum==3.3.0
 protobuf==3.14.0
