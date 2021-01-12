@@ -1,0 +1,790 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "Hello",
+                "What's up",
+                "Good day",
+                "Yo"
+            ],
+            "responses": [
+                "Hi",
+                "Hello",
+                "Hi there, can I help you?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "See you again",
+                "Goodbye",
+                "Bye",
+                "See you later",
+                "byebye"
+            ],
+            "responses": [
+                "See you!",
+                "Have a nice day",
+                "Thank you and Goodbye!"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [
+                "sefihesfhsef",
+                "eufeblfkapdndvls",
+                "oeirwporu3844iughelskdfb",
+                "sifosldkvbgeuofsl.ndv"
+            ],
+            "responses": [
+                "Sorry, I can't understand you.",
+                "Sorry, I don't understand.",
+                "Please give me more information."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "details",
+            "patterns": [
+                "How can you help me?",
+                "What can you do?",
+                "Please Tell me more about yourself",
+                "Please your details"
+            ],
+            "responses": [
+                "I am an interactive chatbot which can help you to diagnose your problems on your dental health. You can start describe your symptoms now."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "Hard to chew",
+            "patterns": [
+                "Hard to chew",
+                "can't chew properly",
+                "hardly chew",
+                "cannot bite"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Swelling or inflammation of the gums",
+            "patterns": [
+                "Swelling or inflammation of the gums",
+                "gums are swelling",
+                "swelling of gums",
+                "gum is getting big"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Shaky Teeth",
+            "patterns": [
+                "Shaky teeth",
+                "teeth is shaking",
+                "teeth not stable"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Swelling of the jaw",
+            "patterns": [
+                "Swelling of the jaw",
+                "jaw is getting big",
+                "enlargement of jaw"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Fever",
+            "patterns": [
+                "Fever",
+                "Body temperature increase",
+                "High temperature"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Swollen lymph nodes around jaw or neck",
+            "patterns": [
+                "Swollen lymph nodes around jaw or neck",
+                "lymph is getting bigger",
+                "swollen lymph",
+                "lymph enlargement"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Bad Breath",
+            "patterns": [
+                "Bad breathe",
+                "breathe smells bad",
+                "breathe stinks",
+                "mouth smells smelly"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Pain or tenderness around the gums",
+            "patterns": [
+                "pain or tenderness around the gums",
+                "gums become soft",
+                "gum is painful"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Severe pain for several days after tooth extraction",
+            "patterns": [
+                "severe pain for several days after tooth extraction",
+                "just take of my teeth and it is painful for few days",
+                "suffer pain for few days after extraction"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Bones seen in socket",
+            "patterns": [
+                "bones seen in socket",
+                "can see my bones from socket"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Teeth feel painful and sensitive",
+            "patterns": [
+                "teeth feel painful sensitive",
+                "sensitive teeth",
+                "tooth is pain sensitive"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Eroded tooth",
+            "patterns": [
+                "Eroded tooth",
+                "tooth spoil",
+                "teeth eroding"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Headache",
+            "patterns": [
+                "Headache",
+                "Head pain"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Insomnia or feeling restless",
+            "patterns": [
+                "Insomnia or feeling restless",
+                "can't sleep properly",
+                "don't enough rest"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "The sound of teeth crunching during sleep",
+            "patterns": [
+                "sound of teeth crunching during sleep",
+                "teeth grinding",
+                "jaw clenching",
+                "bruxism",
+                "grind the teeth when sleeping"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Gums bleed easily",
+            "patterns": [
+                "Gum bleed easily",
+                "gum often bleeds"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "The shape of the gum is round",
+            "patterns": [
+                "shape of gum is round",
+                "round gum shape"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "The consistency of the gums becomes soft",
+            "patterns": [
+                "consistency of gums become soft"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Gum or suppurating teeth",
+            "patterns": [
+                "gum or suppurating teeth"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Tooth aches or throbbing",
+            "patterns": [
+                "tooth aches",
+                "throbbing"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Redness on the corners of the mouth",
+            "patterns": [
+                "redness on corners of mouth",
+                "red around mouth"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "The corner of the mouth feel painful",
+            "patterns": [
+                "corner of mouth feel painful",
+                "painful in mouth"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Scaly mouth corners",
+            "patterns": [
+                "scaly mouth corners"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Ulcer (wound in the corner of the mouth)",
+            "patterns": [
+                "Ulcer",
+                "mouth wound"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Dentin Seen",
+            "patterns": [
+                "Dentin seen"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Cavity",
+            "patterns": [
+                "cavity",
+                "surface of teeth damaged",
+                "teeth holes"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Infected pulp/inflammation of the pulp",
+            "patterns": [
+                "infected pulp",
+                "inflammation of pulp",
+                "inflammation between teeth"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Throbbing pain without stimulation",
+            "patterns": [
+                "throbbing pain without stimulation",
+                "pain sometimes without stimulation",
+                "didn't touch the area but pain"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "White spots on teeth",
+            "patterns": [
+                "white spots on teeth",
+                "tooth white spot on it"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "White patches on tongue",
+            "patterns": [
+                "white patches on tongue",
+                "white tongue"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "white patches on the oral cavity",
+            "patterns": [
+                "white patches on the oral cavity",
+                "oral white"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Plaque deposits",
+            "patterns": [
+                "plaque deposits",
+                "teeth yellow stains"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "There is Tartar",
+            "patterns": [
+                "tartar",
+                "coating on teeth"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Tooth decay",
+            "patterns": [
+                "tooth decay",
+                "tooth corrode"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Pulp is numb",
+            "patterns": [
+                "pulp no feeling",
+                "pulp numb"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "The pulp chamber is open",
+            "patterns": [
+                "pulp chamber open",
+                "space between teeth is big"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Red gum",
+            "patterns": [
+                "red gum",
+                "gum is red",
+                "gum is reddish",
+                "gum is pinkish",
+                "pinky gum"
+            ],
+            "responses": [
+                "Can you please tell us more about your symptoms? If there is no other symptoms, kindly type 'NO'."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "no_other_symptoms",
+            "patterns": [
+                "No"
+            ],
+            "responses": [
+                "Its a No"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Periodontal Abscess",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Periodontal Abscess, Infection that is located around the periodontal pocket as well as can resulting in ligament damage periodontal and alveolar bone."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Peripical Abscess",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Peripical Abscess, A collection of pus at the root of a tooth, usually caused by an infection that has spread from a tooth to the surrounding tissues."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Alveolar Osteitis",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Alveolar Osteitis, A painful dental condition that sometimes happens after you have a permanent adult tooth extracted. Dry socket is when the blood clot at the site of the tooth extraction fails to develop, or it dislodges or dissolves before the wound has healed."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Dental Abrasion",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Dental Abrasion, Is another form of dental damage caused by the forces applied to the teeth. Rather than being caused by tooth on tooth contact, abrasion is typically caused by outside elements, like aggressively brushing the teeth."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Bruxism",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Bruxism, The involuntary gnashing, grinding, or clenching of teeth. It is usually an unconscious activity, whether the individual is awake or asleep"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Gingivitis",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Gingivitis, A common and mild form of gum disease (periodontal disease) that causes irritation, redness and swelling (inflammation) of your gingiva, the part of your gum around the base of your teeth."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Infected Teeth",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Infected Teeth, A pocket of pus that can form in different parts of a tooth as a result of a bacterial infection. It’s sometimes called a dental abscess. An abscessed tooth causes moderate to severe pain that can sometimes radiate to your ear or neck."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Pain at the rear teeth",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Pain at the rear teeth, Sinus infection can be referred to the rear teeth pain which mean can cause a toothache ,specifically in the upper rear teeth, which are close to the sinuses."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Angular Ceilitis",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Angular Ceilitis, Inflammation and fissuring radiating from the commissures (angles) of the mouth secondary to predisposing factors such as nutritional deficiencies, atopic dermatitis, or Candida albicans (yeast) infection. Also called angular stomatitis, commissural cheilitis, or perlèche."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Caries Media",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Caries Media, Extensive structural defect. Caries has penetrated up to the dentin and spreads two-dimensionally beneath the enamel defect where the dentin offers little resistance."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Caries Profunda",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Caries Profunda, Deep structural defect. Caries has penetrated up to the dentin layers of the tooth close to the pulp."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Caries Superficial",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Caries Superficial, Enamel caries, wedge-shaped structural defect. Caries has affected the enamel layer, but has not yet penetrated the dentin."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Candidiasis",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Candidiasis, An infection caused by a species of the yeast Candida, usually Candida albicans."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Calculus (dental)",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Calculus (dental), A form of hardened dental plaque"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Pulp Necrosis",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Pulp Necrosis, A clinical diagnostic category indicating the death of cells and tissues in the pulp chamber of a tooth with or without bacterial invasion."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "Periodontitis",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "You MAY suffer from Periodontitis, Inflammation of the tissue around the teeth, often causing shrinkage of the gums and loosening of the teeth."
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "cant_find_disease",
+            "patterns":[
+                ""
+            ],
+            "responses":[
+                "Sorry we can't find any related disease in your case. If you still feel uncomfortable, kindly proceed to the nearest dental clinic ASAP."                
+            ],
+            "context":[
+                ""
+            ]
+        }
+    ]
+}

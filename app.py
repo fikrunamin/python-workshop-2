@@ -41,6 +41,7 @@ def train_data():
     ignore_words = [',', '|']
 
     intents = request.json.get('data')
+
     print(intents)
 
     stopWords = set(stopwords.words('english'))
@@ -417,7 +418,10 @@ def create_response():
             sorry = ['Sorry, I don\'t understand what you mean.',
                      'Can you type in understandable words?']
             return(random.choice(sorry))
-        res = getResponse(ints)
+        if(request.form['isSuggestion']):
+            res = getSuggestion(ints)
+        else:
+            res = getResponse(ints)
         return(res)
 
     print("You can start interact with the chatbot now.")
