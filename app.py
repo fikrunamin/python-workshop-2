@@ -359,24 +359,43 @@ def create_response():
             data_intents['detected_disease_probabilities'] = detected_disease_probabilities
             print("Diseases: ", temp)
             print("Probabilities: ", detected_disease_probabilities)
-
+        data_intents['ints'] = ints
         return data_intents
 
-    def getSuggestion(ints):
-        prediction = getPrediction(ints)
-        index_highest_disease_probability = prediction['detected_disease_probabilities'][0]['index']
-        for rule in rules[index_highest_disease_probability]:
-            if (int(rule) not in detected_rules):
-                result = "Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
-                    rule) - 1] + ", do you also feel it? symptoms no: " + rule
-                print(result)
-                user_input = input().lower().strip()
-                if 'yes' in user_input:
-                    ints.append(predict_class(symptoms[int(
-                        rule) - 1], model))
-        result = "I have diagnosed your symptoms and I guess you are having "
-        result += prediction['detected_disease_probabilities'][0]['disease'] + ". Probability : " + str(prediction[0]['probability'])
-        return [result, prediction, True]
+    # def getSuggestion(message, data):
+    #     print('masuk ke get suggestion', message)
+    #     print('data', data)
+    #     print('ints', data[0])
+    #     print('suggestion_rules', data[1])
+    #     print('current_suggestion_rule', data[2])
+    #     print('total_suggestion_replies', data[3])
+    #     if total_suggestion_replies == len(suggestion_rules):
+    #         print('nol dulu yah')
+    #         return "nol dulu yah"
+    #     else:
+    #         print("Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
+    #             suggestion_rules[current_suggestion_rule]) - 1] + ", do you also feel it? symptoms no: " + \
+    #         suggestion_rules[current_suggestion_rule])
+        #     return "Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
+        #                         suggestion_rules[current_suggestion_rule]) - 1] + ", do you also feel it? symptoms no: " + suggestion_rules[current_suggestion_rule]
+        #     # if "yes" in message.lower().strip():
+        #     #     ints.append()
+        #
+        # # prediction = getPrediction(ints)
+        # # index_highest_disease_probability = prediction['detected_disease_probabilities'][0]['index']
+        # # for rule in rules[index_highest_disease_probability]:
+        # #     if (int(rule) not in detected_rules):
+        # #         result = "Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
+        # #             rule) - 1] + ", do you also feel it? symptoms no: " + rule
+        # #         print(result)
+        # #         user_input = input().lower().strip()
+        # #         if 'yes' in user_input:
+        # #             ints.append(predict_class(symptoms[int(
+        # #                 rule) - 1], model))
+        # # result = "I have diagnosed your symptoms and I guess you are having "
+        # # result += prediction['detected_disease_probabilities'][0]['disease'] + ". Probability : " + str(prediction[0]['probability'])
+        # # return [result, prediction, True]
+        # return json.dumps({'result': 'nda bisa asataga', 'prediction': [], 'suggestion_rules': [], "current_suggestion_rule": 0, 'ints': [], 'isSuggestion': False})
 
     def getResponse(ints):
         prediction = getPrediction(ints)
@@ -389,20 +408,22 @@ def create_response():
                 elif(result == "no_other_symptoms" or len(symptoms_list) >= 3):
                     index_highest_disease_probability = prediction[
                         'detected_disease_probabilities'][0]['index']
+                    suggestion_rules = []
                     for rule in rules[index_highest_disease_probability]:
                         if(int(rule) not in detected_rules):
-                            result = "Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
-                                rule) - 1] + ", do you also feel it? symptoms no: " + rule
-                            print(result)
-                            user_input = input().lower().strip()
-                            if 'yes' in user_input:
-                                ints.append(predict_class(symptoms[int(
-                                    rule) - 1], model))
-                    result = "I have diagnosed your symptoms and I guess you are having "
-                    result += prediction[
-                        'detected_disease_probabilities'][0]['disease'] + ". Probability : " + str(prediction[
-                            'detected_disease_probabilities'][0]['probability'])
-                    return [result, prediction, True]
+                            suggestion_rules.append(rule)
+                    result = "Mmm, based on my data, people that have your symptoms are also have " + symptoms[int(
+                                suggestion_rules[0]) - 1] + ", do you also feel it? symptoms no: " + suggestion_rules[0]
+                    #         print(result)
+                    #         user_input = input().lower().strip()
+                    #         if 'yes' in user_input:
+                    #             ints.append(predict_class(symptoms[int(
+                    #                 rule) - 1], model))
+                    # result = "I have diagnosed your symptoms and I guess you are having "
+                    # result += prediction[
+                    #     'detected_disease_probabilities'][0]['disease'] + ". Probability : " + str(prediction[
+                    #         'detected_disease_probabilities'][0]['probability'])
+                    return json.dumps({'result': result, 'prediction': prediction, 'suggestion_rules': suggestion_rules, "current_suggestion_rule": 0, 'ints': ints, 'isSuggestion': True})
                     # for ds in detected_disease_probabilities:
                     #     if ds['probability'] >= 0.3:
                     #         result += ds['disease'] + ", "
@@ -410,55 +431,70 @@ def create_response():
         #             print('3')
         #             print(i['responses'])
         # response = random.choice(i['responses'])
-        return [result, prediction, False]
+        return json.dumps({'result': result, 'prediction': prediction, 'suggestion_rules': [], "current_suggestion_rule": 0, 'ints': ints, 'isSuggestion': False})
 
-    def chatbot_response(msg):
-        ints = predict_class(msg)
-        if(ints == 0):
-            sorry = ['Sorry, I don\'t understand what you mean.',
-                     'Can you type in understandable words?']
-            return(random.choice(sorry))
-        if(request.form['isSuggestion']):
-            res = getSuggestion(ints)
+    def chatbot_response(msg, isSuggestion = []):
+        if len(isSuggestion) > 0:
+            print('masuk sini oi')
+            # res = getSuggestion(msg, isSuggestion)
         else:
+            ints = predict_class(msg)
+            if(ints == 0):
+                ints = {"intent": "no_other_symptoms", "probability": "1.0" }
+                sorry = ['Sorry, I don\'t understand what you mean.',
+                         'Can you type in understandable words?']
+                return(random.choice(sorry))
             res = getResponse(ints)
         return(res)
 
-    print("You can start interact with the chatbot now.")
+    if(request.form['isDone'] != "1"):
+        print("You can start interact with the chatbot now.")
 
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="workshop-2"
-    )
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="workshop-2"
+        )
 
-    mycursor = mydb.cursor()
+        mycursor = mydb.cursor()
 
-    mycursor.execute(
-        "SELECT * FROM `chats` LEFT JOIN chat_sessions ON chats.session = chat_sessions.session WHERE chats.sender = 'me' AND chat_sessions.session = '%s'" % request.form['session'])
-    myresult = mycursor.fetchall()
+        mycursor.execute(
+            "SELECT * FROM `chats` LEFT JOIN chat_sessions ON chats.session = chat_sessions.session WHERE chats.sender = 'me' AND chat_sessions.session = '%s'" % request.form['chat_session'])
+        myresult = mycursor.fetchall()
 
-    row_headers = [x[0] for x in mycursor.description]
-    json_data = []
-    for result in myresult:
-        json_data.append(dict(zip(row_headers, result)))
+        row_headers = [x[0] for x in mycursor.description]
+        json_data = []
+        for result in myresult:
+            json_data.append(dict(zip(row_headers, result)))
 
-    final_response = ""
-    for data_db in json_data:
-    # while True:
-        user_input = data_db['message']
-        # user_input = "Umm, I'm not feeling well today. I am having cavity on my teeth, and my dentin is seen and my pulp felt infected."
-        print(user_input)
-        user_input = user_input.lower().strip()
-        # user_input = "i have bad breathe, fever, cannot sleep, headache"
-        if(user_input != ""):
-            print("You: ============================================================================>>>", user_input)
-            response = chatbot_response(user_input)
-            print("Bot: ============================================================================>>>", response)
-            final_response = response
-    
-    return final_response
+        final_response = ""
+        for data_db in json_data:
+        # while True:
+            user_input = data_db['message']
+            # user_input = "Umm, I'm not feeling well today. I am having cavity on my teeth, and my dentin is seen and my pulp felt infected."
+            print(user_input)
+            user_input = user_input.lower().strip()
+            # user_input = "i have bad breathe, fever, cannot sleep, headache"
+            if(user_input != ""):
+                print("You: ============================================================================>>>", user_input)
+                if(data_db['isSuggestion'] == 1):
+                    ints = request.form['ints']
+                    suggestion_rules = request.form['suggestion_rules']
+                    current_suggestion_rule = request.form['current_suggestion_rule']
+                    total_suggestion_replies = request.form['total_suggestion_replies']
+                    data = [ints, suggestion_rules, current_suggestion_rule, total_suggestion_replies]
+                    response = chatbot_response(user_input, data)
+                else:
+                    response = chatbot_response(user_input)
+                print("Bot: ============================================================================>>>", response)
+                final_response = response
+
+        return final_response
+    else:
+        print(request.json['ints'])
+        return getResponse(request.json['ints'])
+
 
 
 if __name__ == '__main__':
